@@ -81,7 +81,7 @@ titles.forEach(title => {
 
 let allText = document.querySelectorAll("p")
 allText.forEach((element) => {
-    element.addEventListener("click", function (event) {
+    element.addEventListener("click", function () {
         element.style.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
     })
 })
@@ -90,7 +90,14 @@ allText.forEach((element) => {
 // #9 Resize 
 
 let body = document.querySelector("body")
-window.addEventListener('resize', function (event) {
+window.addEventListener('resize', function () {
     body.style.backgroundColor = "black"
     body.style.color = "white"
 })
+
+//-----------------------------------------------------------------------------------//
+// #10 Wheel
+const scrollWindow = document.querySelector('.footer');
+scrollWindow.addEventListener('wheel', () => {
+    scrollWindow.style.transform = 'scale(3.0)';
+});
