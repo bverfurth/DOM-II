@@ -8,7 +8,7 @@ const titles = document.querySelectorAll('h2')
 //const buttons = document.querySelectorAll('.bttn')
 
 //-----------------------------------------------------------------------------------//
-// #1 Mouseover
+// #1 Mouse Over
 const link = document.querySelector('nav');
 
 //This Handler Allows Nav Bar To Change Over Mouse Over
@@ -23,7 +23,7 @@ link.addEventListener("mouseover", function (event) {
 }, false);
 
 //-----------------------------------------------------------------------------------//
-// #2 DoubleClick
+// #2 Double Click
 window.ondblclick = colorChange;
 
 function colorChange() {
@@ -41,7 +41,7 @@ allDivs.forEach((div) => {
 });
 
 //-----------------------------------------------------------------------------------//
-// #4 KeyDown / KeyUp
+// #4 Key Down
 
 // Arrow Keys Cause Pictures To Disappear and Re-Appear
 images.forEach(image => {
@@ -51,6 +51,8 @@ images.forEach(image => {
     });
 });
 
+//-----------------------------------------------------------------------------------//
+// #5 Key Up
 images.forEach(image => {
     window.addEventListener('keyup', (e) => {
         if (e.keyCode === 38)
@@ -59,13 +61,36 @@ images.forEach(image => {
 });
 
 //-----------------------------------------------------------------------------------//
-// #5 Load 
+// #6 Load 
 
 window.addEventListener('load', () => {
     alert("Welcome to Fun Bus Travel Agency! Let's Plan Your Next Adventure!")
 })
 
 //-----------------------------------------------------------------------------------//
-// #6 Resize
+// #7 Focus
 
-images.addEventListener("")
+titles.forEach(title => {
+    window.addEventListener('focus', () => {
+        title.style.transform = 'translateX(30%)'
+    });
+});
+
+//-----------------------------------------------------------------------------------//
+// #8 Single Click 
+
+let allText = document.querySelectorAll("p")
+allText.forEach((element) => {
+    element.addEventListener("click", function (event) {
+        element.style.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    })
+})
+
+//-----------------------------------------------------------------------------------//
+// #9 Resize 
+
+let body = document.querySelector("body")
+window.addEventListener('resize', function (event) {
+    body.style.backgroundColor = "black"
+    body.style.color = "white"
+})
